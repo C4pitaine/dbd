@@ -10,7 +10,7 @@ header{
     position: fixed;
     top:0;
     left: 0;
-    background-color: rgb(0, 0, 0,50%);
+    background-color: rgb(0, 0, 0,75%);
     display: flex;
     align-items: center;
     height: 100px;
@@ -29,6 +29,9 @@ header{
                     color: white;
                     font-family: "Roboto", serif;
                     font-size: 32px;
+                    &:hover{
+                        text-decoration: underline;
+                    }
                 }
             }
         }
@@ -43,6 +46,64 @@ header{
         text-align: center;
     }
 }
+
+/* Menu Burger */
+
+#burger {
+    width: 50px;
+    margin-right: 15px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Barre du menu burger */
+
+.bar {
+    transition: all 0.5s;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin-bottom: 8px;
+}
+
+/* Menu Burger ouvert */
+
+header #burger.active .bar {
+    transform: rotate(45deg) translate(5px, 5px);
+
+    &:nth-child(2) {
+        opacity: 0;
+    }
+
+    &:last-child {
+        transform: rotate(-45deg) translate(10px, -12px);
+    }
+}
+
+/* slide menu */
+
+#menu{
+    display: flex;
+    position: fixed;
+    top:0;
+    align-items: 0;
+    margin-top: 100px;
+    background-color: rgb(0, 0, 0,75%);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    a{
+        color: white;
+        font-size: 40px;
+        margin-top: 40px;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+/* slide home */
 
 #home{
     background-image: url('/images/dbd1.png');
@@ -76,6 +137,29 @@ header{
             color: white;
             font-family: "Roboto", serif;
             font-size: 36px;
+        }
+    }
+    .downloadAlert{
+        margin-top: 20px;
+    }
+}
+
+/* Media queries */
+
+@media all and (max-width:1350px){
+    #burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        ul {
+            display: none !important;
         }
     }
 }
