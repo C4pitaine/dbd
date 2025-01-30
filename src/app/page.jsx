@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import Alert from '@mui/material/Alert';
+import Trailer from '../../components/Trailer';
 
 
 export default function HomePage(){
@@ -33,6 +34,7 @@ export default function HomePage(){
                     </Alert>
                 )}
             </div>
+            <Trailer/>
         </>
     )
 }

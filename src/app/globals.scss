@@ -176,6 +176,15 @@ header #burger.active .bar {
     }
 }
 
+/* slide Trailer */
+
+#trailer{
+    iframe{
+        width: 100%;
+        height:100vh;
+    }
+}
+
 /* Media queries */
 
 @media all and (max-width:1350px){
@@ -192,6 +201,17 @@ header #burger.active .bar {
 
         ul {
             display: none !important;
+        }
+    }
+}
+
+@media all and (max-width:500px){
+    #home{
+        .download{
+            width: 80%;
+            .button{
+                font-size: 24px;
+            }
         }
     }
 }
