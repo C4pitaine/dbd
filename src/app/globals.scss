@@ -55,9 +55,15 @@ header{
     }
     .langue{
         margin-right: 20px;
-        color: white;
         font-family: "Roboto", serif;
         text-align: center;
+        color: white;
+        select{
+            background-color:transparent;
+            option{
+                color: black;
+            }
+        }
     }
 }
 

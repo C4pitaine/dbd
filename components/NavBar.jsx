@@ -37,7 +37,10 @@ export default function NavBar(){
                 </nav>
                 <div className="langue">
                     <img src="/images/langue.png" alt="" />
-                    <div>EN</div>
+                    <select name="langue" id="langue">
+                        <option value="en">FR</option>
+                        <option value="fr">EN</option>
+                    </select>
                 </div>
             </header>
             {isOpen && (
