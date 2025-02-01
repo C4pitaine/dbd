@@ -185,6 +185,18 @@ header #burger.active .bar {
     }
 }
 
+/* Slide Présentation */
+
+#pres{
+    background-color: black;
+    background-image: url("/images/pres.png");
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Media queries */
 
 @media all and (max-width:1350px){
