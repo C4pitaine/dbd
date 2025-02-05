@@ -3,12 +3,14 @@ import { useState } from 'react';
 import Alert from '@mui/material/Alert';
 import Trailer from '../../components/Trailer';
 import Iframe from '../../components/Iframe';
+import Gameplay from '../../components/Gameplay';
 
 
 export default function HomePage(){
     
     const [downloading, setDownloading] = useState(false)
     const [isDownloaded,setIsDownloaded] = useState(false)
+    const [gameplay,setGameplay] = useState('SURVIVOR')
     const download = () =>{
         setDownloading(true)
         interval()
@@ -60,6 +62,53 @@ export default function HomePage(){
                             />
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="slide" id="gameplay">
+                <div className="wrapper">
+                    <div className="buttons">
+                        <div className={`buttonKiller ${gameplay == "KILLER" ? "active" : ""}`} onClick={() => setGameplay('KILLER')}>KILLER</div>
+                        <div className={`buttonSurvivor ${gameplay == "SURVIVOR" ? "active" : ""}`} onClick={()=> setGameplay('SURVIVOR')}>SURVIVOR</div>
+                    </div>
+                    {gameplay == "SURVIVOR" && <img className='image' src="/images/survivor.png" alt="Logo Survivor Dead By Daylight" />}
+                    {gameplay == "KILLER" && <img className='image' src="/images/killer.png" alt="Logo Killer Dead By Daylight" />}
+                    <h3>{gameplay} GAMEPLAY BASICS</h3>
+                    {gameplay == 'SURVIVOR' && 
+                    <div className="gameplays">
+                        <Gameplay 
+                            title="REPAIR"
+                            src="/images/surv1.png"
+                            description="To power up the Exit Gates and escape, Survivors must repair 5 of the 7 generators located throughout the map."
+                        />
+                        <Gameplay 
+                            title="EVADE"
+                            src="/images/surv2.png"
+                            description="Most Killers are faster than Survivors. Avoid running in a straight line. Instead, drop pallets in the Killer’s path."
+                        />
+                        <Gameplay 
+                            title="ESCAPE"
+                            src="/images/surv3.png"
+                            description="If struck twice by the Killer you’ll enter the Dying State where you can be picked up and impaled on a sacrificial hook."
+                        />
+                    </div>}
+                    {gameplay == 'KILLER' && 
+                    <div className="gameplays">
+                        <Gameplay 
+                            title="HUNT"
+                            src="/images/kill1.png"
+                            description="Survivors need to repair generators around the map to power up the Exit Gates and escape. "
+                        />
+                        <Gameplay 
+                            title="CHASE"
+                            src="/images/kill2.png"
+                            description="As Survivors run for their lives, they’ll leave scratch marks for you to follow. Should the trail go cold."
+                        />
+                        <Gameplay 
+                            title="HOOK"
+                            src="/images/kill3.png"
+                            description="Striking a Survivor once puts them into the Injured State. Twice, and they enter the Dying State."
+                        />
+                    </div>}
                 </div>
             </div>
         </>
