@@ -330,6 +330,29 @@ header #burger.active .bar {
     }
 }
 
+/* Downloadable Content */
+#dc{
+    background-image: url('/images/pres.png');
+    background-position: center center;
+    background-size: cover;
+    background-color: black;
+    overflow: hidden;
+
+    .title{
+        margin-top: 150px;
+        border-top: solid 1px white;
+        border-bottom: solid 1px white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2{
+            color: white;
+            font-family: "Roboto", serif;
+            font-size: 48px;
+        }
+    }
+}
+
 /* Media queries */
 
 @media all and (max-width:1600px){

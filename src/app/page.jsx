@@ -111,6 +111,11 @@ export default function HomePage(){
                     </div>}
                 </div>
             </div>
+            <div className="slide" id="dc">
+                <div className="title">
+                    <h2>Downloadable Content</h2>
+                </div>
+            </div>
         </>
     )
 }
