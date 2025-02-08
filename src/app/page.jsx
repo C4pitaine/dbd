@@ -4,6 +4,7 @@ import Alert from '@mui/material/Alert';
 import Trailer from '../../components/Trailer';
 import Iframe from '../../components/Iframe';
 import Gameplay from '../../components/Gameplay';
+import Carousel from '../../components/Carousel';
 
 
 export default function HomePage(){
@@ -113,7 +114,10 @@ export default function HomePage(){
             </div>
             <div className="slide" id="dc">
                 <div className="title">
-                    <h2>Downloadable Content</h2>
+                    <div className="wrapper"><h2>Downloadable Content</h2></div>
+                </div>
+                <div className="wrapper-carousel">
+                    <Carousel />
                 </div>
             </div>
         </>
