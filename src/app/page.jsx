@@ -5,6 +5,7 @@ import Trailer from '../../components/Trailer';
 import Iframe from '../../components/Iframe';
 import Gameplay from '../../components/Gameplay';
 import Carousel from '../../components/Carousel';
+import Footer from '../../components/Footer';
 
 
 export default function HomePage(){
@@ -120,6 +121,27 @@ export default function HomePage(){
                     <Carousel />
                 </div>
             </div>
+            <div className="slide" id="contact">
+                <div className="contact">
+                    <div className="wrapper">
+                        <h2>STAY ONE STEP AHEAD</h2>
+                        <p>Get all the lasted Dead by Daylight news, updates, deals, and more delivered straight to your inbox.</p>
+                        <div className="signup">
+                            <p>Email address</p>
+                            <div className="input">
+                                <input type="text"  placeholder='Enter your email adress'/>
+                                <div className="button">Sign up</div>
+                            </div>
+                        </div>
+                        <div className="check">
+                            <input type="checkbox" />
+                            <p>Yes, I would like to receive newsletters, information and promotions about Dead By Daylight from Behaviour Interactive Inc. (“BHVR”). I will be able to withdraw my consent at any time</p>
+                        </div>
+                        <p className='policy'>By clicking on Sign Up, I confirm that I am 18 years old or over and that I accept BHVR’s <strong>Privacy Policy</strong> and <strong>Terms of Use</strong></p>
+                    </div>
+                </div>
+            </div>
+            <Footer />
         </>
     )
 }
