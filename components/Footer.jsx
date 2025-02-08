@@ -6,7 +6,7 @@ export default function Footer(){
                 <div className="wrapper">
                     <img src="/images/logoHome.png" alt="Logo Dead by Daylight" />
                     <div className="up">
-                        <p>Privacy ¨Policy</p>
+                        <p>Privacy Policy</p>
                         <p>Terms of use</p>
                         <p>Press</p>
                         <p>Contest Rules</p>
