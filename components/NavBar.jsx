@@ -38,7 +38,7 @@ export default function NavBar(){
                 <div className="langue">
                     <img src="/images/langue.png" alt="" />
                     <select name="langue" id="langue">
-                        <option value="en">FR</option>
+                        {/* <option value="en">FR</option> */}
                         <option value="fr">EN</option>
                     </select>
                 </div>

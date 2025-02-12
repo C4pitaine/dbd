@@ -12,6 +12,10 @@ export default function HomePage(){
     
     const [downloading, setDownloading] = useState(false)
     const [isDownloaded,setIsDownloaded] = useState(false)
+    const [contact,setContact] = useState(false)
+    const [errorContact,setErrorContact] = useState(false)
+    const [successContact,setSuccessContact] = useState(false)
+    const [message,setMessage] = useState('')
     const [gameplay,setGameplay] = useState('SURVIVOR')
     const download = () =>{
         setDownloading(true)
@@ -22,6 +26,27 @@ export default function HomePage(){
             setDownloading(false)
             setIsDownloaded(true)
         },4000)
+    }
+
+    const handleSubmit = () =>{
+        setContact(false)
+        setErrorContact(false)
+        setMessage("")
+        const input = document.querySelector('.inputEmail')
+        const checkBox = document.querySelector('.checkBox')
+        if(input.value.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)){
+            if(checkBox.checked){
+                setContact(true)
+                setErrorContact(false)
+                setMessage('Votre adresse email est enregistrée')
+            }else{
+                setErrorContact(true)
+                setMessage('Veuillez cocher la checkbox')
+            }
+        }else{
+            setErrorContact(true)
+            setMessage('Veuillez entrer une adresse email valide')
+        }
     }
 
     return(
@@ -126,15 +151,17 @@ export default function HomePage(){
                     <div className="wrapper">
                         <h2>STAY ONE STEP AHEAD</h2>
                         <p>Get all the lasted Dead by Daylight news, updates, deals, and more delivered straight to your inbox.</p>
+                        {errorContact &&  <p className='errorContact'>{message}</p>}
+                        {contact &&  <p className='successContact'>{message}</p>}
                         <div className="signup">
                             <p>Email address</p>
                             <div className="input">
-                                <input type="text"  placeholder='Enter your email adress'/>
-                                <div className="button">Sign up</div>
+                                <input type="text"  placeholder='Enter your email adress' className='inputEmail'/>
+                                <div className="button" onClick={handleSubmit}>Sign up</div>
                             </div>
                         </div>
                         <div className="check">
-                            <input type="checkbox" />
+                            <input type="checkbox" className='checkBox'/>
                             <p>Yes, I would like to receive newsletters, information and promotions about Dead By Daylight from Behaviour Interactive Inc. (“BHVR”). I will be able to withdraw my consent at any time</p>
                         </div>
                         <p className='policy'>By clicking on Sign Up, I confirm that I am 18 years old or over and that I accept BHVR’s <strong>Privacy Policy</strong> and <strong>Terms of Use</strong></p>

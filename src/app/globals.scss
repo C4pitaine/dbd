@@ -10,6 +10,7 @@
 }
 
 header{
+    z-index: 1000;
     width: 100%;
     position: fixed;
     top:0;
@@ -397,7 +398,7 @@ footer{
         align-items: center;
 
         .swiper{
-            min-height: 50vh;
+            min-height: 60vh;
             .swiper-pagination-bullet{
                 background-color: white;
             }
@@ -461,6 +462,12 @@ footer{
             align-items: center;
             flex-direction: column;
 
+            .errorContact{
+                color: red;
+            } 
+            .successContact{
+                color: green;
+            }  
             h2{
                 font-size: 40px;
                 margin-bottom: 20px;
@@ -474,17 +481,20 @@ footer{
             }
             .signup{
                 display: flex;
+                width: 80%;
                 p{
                     margin-top: 10px;
                     margin-right: 20px;
                 }
                 .input{
+                    width: 80%;
                     display: flex;
                     input{
                         background-color: rgba(0, 0, 0,70%);
                         border: solid 1px white;
                         padding: 10px;
                         color: white;
+                        width: 70%;
                     }
                     .button{
                         background-image: url("/images/red.png");
@@ -547,6 +557,36 @@ footer{
     }
 }
 
+@media all and (max-width:1400px){
+    #dc{
+       .wrapper-carousel{
+            .swiper{
+                min-height: 70vh;
+            }
+       }
+    }
+}
+
+@media all and (max-width:1366px){
+    #contact{
+        .wrapper{
+            .signup{
+                flex-direction: column;
+                .input{
+                    flex-direction: column;
+                    .inputEmail{
+                        width: 100% !important;
+                    }
+                    .button{
+                        margin-right: 0;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media all and (max-width:1350px){
     #burger {
         display: flex;
@@ -586,20 +626,6 @@ footer{
                 .gameplay{
                     img{
                         width: 100%;
-                    }
-                }
-            }
-        }
-    }
-    #contact{
-        .wrapper{
-            .signup{
-                flex-direction: column;
-                .input{
-                    flex-direction: column;
-                    .button{
-                        margin-right: 0;
-                        margin-top: 10px;
                     }
                 }
             }
